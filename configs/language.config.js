@@ -51,6 +51,29 @@ const LANGUAGES_CONFIG = {
     [PROMPTV2]: {
         model: 'gpt-3.5-turbo-1106',
     },
+    [KOTLIN]: {
+        compile: 'kotlinc Solution.kt -include-runtime -d Solution.jar',
+        run: 'java -jar Solution.jar',
+        timeout: 4,
+        filename: 'Solution.kt',
+        memory: ALLOWED_RAM * ONE_MB,
+    },
+    [PERL]: {
+        compile: '', // Perl is an interpreted language, so no compilation step is needed
+        run: 'perl Solution.pl',
+        timeout: 4,
+        filename: 'Solution.pl',
+        memory: ALLOWED_RAM * ONE_MB,
+
+    
+    },
+    [SWIFT]: {
+        compile: '', // Swift can be interpreted
+        run: 'swift Solution.swift',
+        timeout: 4,
+        filename: 'Solution.swift',
+        memory: ALLOWED_RAM * ONE_MB,
+    }
 }
 
 module.exports = { LANGUAGES_CONFIG }
